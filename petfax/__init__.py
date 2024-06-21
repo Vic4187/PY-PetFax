@@ -6,5 +6,9 @@ def create_app():
     @app.route('/')
     def hello():
         return 'Hello, PetFax!'
-    
+
+    #Register Blueprint
+    from . import pet
+    app.register_blueprint(pet.bp)
+
     return app
